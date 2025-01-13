@@ -15,7 +15,7 @@ public class HomeController {
     @GetMapping("/")
     @ResponseBody
     public String showMain() {
-        return "자동배포 테스트, on " + siteName;
+        return "자동배포 테스트2, on " + siteName;
     }
 
     @GetMapping("/secretKey")
