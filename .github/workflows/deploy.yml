@@ -9,7 +9,7 @@ on:
       - 'readme.md'
       - 'infraScript/**'
     branches:
-      - 'master'
+      - 'main'
 jobs:
   makeTagAndRelease:
     runs-on: ubuntu-latest
@@ -81,6 +81,6 @@ jobs:
           comment: Deploy
           command: |
             mkdir -p /dockerProjects/blog
-            curl -o /dockerProjects/blog/zero_downtime_deploy.py https://raw.githubusercontent.com/ksuju/deploy0125/master/infraScript/zero_downtime_deploy.py
+            curl -o /dockerProjects/blog/zero_downtime_deploy.py https://raw.githubusercontent.com/ksuju/deploy0125/main/infraScript/zero_downtime_deploy.py
             chmod +x /dockerProjects/blog/zero_downtime_deploy.py
             /dockerProjects/blog/zero_downtime_deploy.py
