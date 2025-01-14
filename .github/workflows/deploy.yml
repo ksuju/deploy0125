@@ -57,10 +57,6 @@ jobs:
           ACTIONS_STEP_DEBUG: true
           APPLICATION_SECRET: ${{ secrets.APPLICATION_SECRET_YML }}
         run: echo "$APPLICATION_SECRET" > src/main/resources/application-secret.yml
-      - name: 기존 이미지 제거
-        run: |
-          docker rmi ghcr.io/${{ env.OWNER_LC }}/blog:${{ needs.makeTagAndRelease.outputs.tag_name }} || true
-          docker rmi ghcr.io/${{ env.OWNER_LC }}/blog:latest || true
       - name: 빌드 앤 푸시
         uses: docker/build-push-action@v3
         with:
